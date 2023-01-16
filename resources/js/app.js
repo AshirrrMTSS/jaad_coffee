@@ -8,9 +8,13 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import '@mdi/font/css/materialdesignicons.css';
-import router from './router';
+import { appRouter } from "./router";
+import VueRouter from "vue-router";
+import store from "./store/index";
 
 Vue.use(Vuetify);
+Vue.use(VueRouter);
+export const vueStore = store(Vue);
 
 /**
  * The following block of code may be used to automatically register your
@@ -30,7 +34,8 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  */
 
 const app = new Vue({
-    router,
+    router: appRouter(),
     vuetify: new Vuetify(),
+    store: vueStore,
     el: '#app',
 });

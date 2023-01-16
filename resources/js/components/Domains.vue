@@ -7,12 +7,12 @@
                         Domains
                         <div class="flex-grow-1" />
                         <v-text-field
-                            v-model="search"
+                            v-model="tableData.search"
                             append-icon="mdi-magnify"
                             label="Search"
                             single-line
                             hide-details
-                            @input="handleSearch"
+                            @change="handleSearch"
                         />
                     </v-card-title>
                     <v-data-table
@@ -32,10 +32,10 @@
                                     <td>{{ item.is_idn ? 'Yes' : 'No' }}</td>
                                     <td>{{ item.is_imprinted ? 'Yes' : 'No' }}</td>
                                     <td>
-                                        <v-btn icon @click="handleImprint">
+                                        <v-btn icon @click="handleImprint(item.id)">
                                             <v-icon>mdi-fingerprint</v-icon>
                                         </v-btn>
-                                        <v-btn icon @click="handleDelete">
+                                        <v-btn icon @click="handleDelete(item.id)">
                                             <v-icon>mdi-delete</v-icon>
                                         </v-btn>
                                     </td>
@@ -43,6 +43,9 @@
                             </tbody>
                         </template>
                     </v-data-table>
+                    <div>
+                        <v-pagination v-model="tableData.page" :length="pages" :total-visible="7" @input="next"></v-pagination>
+                    </div>
                 </v-card>
                 <v-btn
                     fab
@@ -74,18 +77,33 @@
                 { text: 'Imprinted', value: 'is_imprinted' },
                 { text: 'Actions' }
             ],
+            pagination: { sortBy: "created_at", descending: true , 'rowsPerPage': -1},
             domains: [],
+            tableData: {
+                page: 1,
+                length: 10,
+                search: null,
+                id: null
+            },
+            pages: 0,
         }
     },
     mounted() {
         this.fetchDomains();
     },
     methods: {
+        next(e) {
+            this.tableData.page = e;
+            this.fetchDomains();
+        },
         async fetchDomains() {
             try {
                 this.loading = true;
-                const domains = await axios.get('/api/domains');
-                this.domains = domains.data;
+                const domains = await axios.get('/api/domains', {
+                    params: this.tableData
+                });
+                this.serveResponse(domains.data)
+                this.domains = domains.data.data;
             }
             catch (e) {
                 console.log(e);
@@ -94,14 +112,25 @@
                 this.loading = false;
             }
         },
+        serveResponse(res) {
+            this.tableData.page = Math.ceil(res.to / this.tableData.length);
+            this.pages = Math.ceil(res.total / this.tableData.length);
+        },
         handleSearch(value) {
-            console.log('handle the search!', value);
+            this.tableData.page = 1;
+            this.fetchDomains();
         },
-        handleDelete() {
-            console.log('handle the delete!');
+        handleDelete(id) {
+            axios.delete(`/api/domains/${id}`).then(resp => {
+                this.fetchDomains();
+            })
         },
-        handleImprint() {
-            console.log('handle the imprint!');
+        handleImprint(id) {
+            axios.put(`/api/domains/${id}`, {
+                is_imprinted: 1
+            }).then(resp => {
+                this.fetchDomains();
+            })
         },
     }
   }

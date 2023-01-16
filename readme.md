@@ -1,6 +1,6 @@
-# Bodis Code Challenge
+#Code Challenge
 
-Thanks for your interest in Bodis and for taking the time to work on our code challenge. We've provided a small Laravel application with an interface built using Vue. Your task is to implement functionality as outlined on the application's *code challenge* page. There are additional bonus items that you may choose to complete as well.
+We've provided a small Laravel application with an interface built using Vue. Your task is to implement functionality as outlined on the application's *code challenge* page. There are additional bonus items that you may choose to complete as well.
 
 ![Screenshot](public/images/screenshot.png)
 
@@ -12,13 +12,6 @@ Thanks for your interest in Bodis and for taking the time to work on our code ch
 4. **mysql**@*5.5.7+*
 
 ## Setup Environment
-
-Clone repo
-
-```
-git clone https://davey0614@bitbucket.org/bodisteam/code-challenge-full-stack.git code-challenge
-```
-
 Install Docker
 
 ```
@@ -85,8 +78,6 @@ http://localhost:8008
 Once the application is loaded please visit the *code challange* page for the requirements. Searching the project source files for the phrase **"Code Challange"** will yield results relevant to each task excluding the bonus items.
 
 ## How to Return
-
-Please email a zip file of the project to davey@bodis.com
 
 Exclude the following directories:
 

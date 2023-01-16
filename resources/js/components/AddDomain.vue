@@ -16,6 +16,17 @@
                             persistent-hint
                         />
                     </v-card-text>
+                    <v-card-text>
+                        <v-select
+                            v-model="internationalized"
+                            :items="['Yes', 'No']"
+                            filled
+                            item-text="text"
+                            item-value="value"
+                            label="Internationalized"
+                            persistent-hint
+                        />
+                    </v-card-text>
                     <v-card-actions>
                         <v-btn color="primary" width="100%" @click="handleSave">
                             Save
@@ -28,16 +39,26 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
   export default {
     data () {
         return {
             loading: false,
             domains: '',
+            internationalized: 'No'
         }
     },
     methods: {
         handleSave() {
-            console.log('handle save!');
+            axios.post('/api/domains', {
+                domains: this.domains,
+                internationalized: this.internationalized == 'No' ? false : true 
+            }).then(resp => {
+                if(resp.data){
+                    this.$router.back();
+                }
+            });
         }
     }
   }

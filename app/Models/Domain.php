@@ -29,8 +29,10 @@ class Domain extends Model
      */
     protected $fillable = [
         'domain_name',
-        'is_idn'
+        'is_idn',
+        'is_imprinted'
     ];
+    protected $softDelete = true;
 
     /**
      * Indicates if the model should be timestamped

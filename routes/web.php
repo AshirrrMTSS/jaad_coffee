@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/', 'Web\SpaController@render');
+// Route::get('/', 'Web\SpaController@render');
+Route::get('{any}', function () {
+    return view('app');
+})->where('any','.*');
