@@ -48,7 +48,15 @@
         <!-- </v-container> -->
 
         <v-footer color="#0F4743" height="100px">
-
+            <v-col align="center" cols="12" sm="12" md="4">
+                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+            </v-col>
+            <v-col align="center" cols="12" sm="12" md="4">
+                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+            </v-col>
+            <v-col align="center" cols="12" sm="12" md="4">
+                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+            </v-col>
         </v-footer>
     </div>
 </template>
