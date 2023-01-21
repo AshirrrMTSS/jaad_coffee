@@ -1,63 +1,56 @@
 <template>
-    <v-app light>
-    <v-toolbar style="background:#0F4743;">
-      <v-spacer />
-     <!-- <v-toolbar-side-icon><img :src="imageLink.logo" alt="Vuetify.js" height="100%"></v-toolbar-side-icon> -->
-      <!-- <v-toolbar-title class="mx-0" v-text="title"></v-toolbar-title> -->
-      <!-- <p>Beta</p> -->
-      <v-toolbar-title class="white--text"> Indonasian <b style="color:#BDEADC;font-size: x-large;">Speciality</b> Coffee </v-toolbar-title>
-      <v-spacer />
-      <!-- <v-spacer></v-spacer> -->
-    </v-toolbar>
-    <v-main>
-        <v-layout>
-            <v-flex xs6 style="background:#231F20;">
-                <v-flex xs12 class="d-flex justify-center align-center">
-                  <img style="width: 50%;padding-top: 100px;" src="/images/commingSoon.png" >
-                </v-flex>
-                <v-flex xs12 class="d-flex justify-center align-center">
-                  <div><h1 style="color: white;">A hidden treasure. </h1></div>
-                  <span></span>
-                  <div><h1 style="color: white;">A gift from us, to you! </h1></div>
-                  <br/>
-                  <div><h1 style="color: white;">Coming Soon</h1></div>
-                </v-flex>
-                <v-flex xs12 class="d-flex justify-center align-center">
+    <div>
+        <v-row>
+            <v-col cols="12" sm="12" md="12">
+                <v-toolbar elevation="4" color="#0F4743">
+                    <v-row>
+                        <v-col align="center">
+                            <v-toolbar-title class="white--text myFont"> Indonasian <b style="color:#BDEADC;font-size: x-large;">Speciality</b> Coffee </v-toolbar-title>
+                        </v-col>
+                    </v-row>
+                </v-toolbar>
+            </v-col>
+        </v-row>
+        <!-- <v-container> -->
+            <v-row no-gutters>
+                <v-col align="center" cols="12" sm="12" md="6" style="background-color:#231F20;">
+                    <img width="350px" src="/images/1.png" >
+                    <v-col align="center" cols="12" sm="12" md="6">
+                        <h2 style="color: white;">A <b style="color:#BDEADC;font-size: x-large;">hidden treasure.</b> 
+                            <br/> A gift from us, to you ! 
+                        </h2>
+                    </v-col>
 
-                  <a href="mailto:connect@jaadfood.com">
-                    <v-btn rounded x-large  color="#BDEADC"><v-icon>mdi-email-outline</v-icon>Enquiries</v-btn>
-                  </a>
-                  <div style="padding-left: 10px;"></div>
-                  <a href="tel:+6281573116980">
-                    <v-btn rounded x-large outlined color="white"><v-icon>mdi-phone</v-icon>Contact Us</v-btn>
-                  </a>
-                </v-flex>
-            </v-flex>
-            <v-flex xs6 class="justify-center">
-              <!-- artwork here -->
-              <img height="100%" widht="100%" src="/images/CoffeeImg.png">
-            </v-flex>
-        </v-layout>
+                    <v-col align="center" cols="12" sm="12" md="6">
+                        <h2 style="color: white;"> Coming Soon !
+                        </h2>
+                    </v-col>
+                    
+                    <v-col align="center" cols="12" sm="12" md="6">
+                        <v-row>
+                            <v-col cols="12" sm="12" md="6">
+                                <a href="mailto:connect@jaadfood.com">
+                                    <v-btn rounded x-large  color="#BDEADC"><v-icon>mdi-email-outline</v-icon>Enquiries</v-btn>
+                                </a>
+                            </v-col>
+                            <v-col cols="12" sm="12" md="6">
+                                <a href="tel:+6281573116980">
+                                    <v-btn style="z-index: 5" rounded x-large outlined color="white"><v-icon>mdi-phone</v-icon>Contact Us</v-btn>
+                                </a>
+                            </v-col>
+                        </v-row>
+                    </v-col>
+                </v-col>
+                <v-col cols="12" sm="12" md="6">
+                    <img contain height="100%" width="100%" src="/images/CoffeeImg.png">
+                </v-col>
+            </v-row>
+        <!-- </v-container> -->
 
-      <v-footer style="background:#0F4743;" height="200px" absolute>
+        <v-footer color="#0F4743" height="100px">
 
-
-        <v-layout class="d-flex justify-center align-center">
-          <div class="white--text ml-3 md4">
-              <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
-          </div>
-          <div class="white--text ml-3 md4">
-            <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
-          </div>
-          <div class="white--text ml-3 md4">
-            <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
-          </div>
-        </v-layout>
-        
-      </v-footer>
-
-    </v-main>
-</v-app>
+        </v-footer>
+    </div>
 </template>
 
 <script>
