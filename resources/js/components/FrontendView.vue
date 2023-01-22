@@ -5,7 +5,7 @@
                 <v-toolbar elevation="4" color="#0F4743">
                     <v-row>
                         <v-col align="center">
-                            <v-toolbar-title class="white--text myFont"> Indonasian <b style="color:#BDEADC;font-size: x-large;">Speciality</b> Coffee </v-toolbar-title>
+                            <v-toolbar-title class="white--text fontColor"> Indonasian <b style="color:#BDEADC;font-size: x-large;">Speciality</b> Coffee </v-toolbar-title>
                         </v-col>
                     </v-row>
                 </v-toolbar>
@@ -35,7 +35,7 @@
                             </v-col>
                             <v-col cols="12" sm="12" md="6">
                                 <a href="tel:+6281573116980">
-                                    <v-btn style="z-index: 5" rounded x-large outlined color="white"><v-icon>mdi-phone</v-icon>Contact Us</v-btn>
+                                    <v-btn style="z-index: 5" rounded x-large outlined class="fontColor"><v-icon>mdi-phone</v-icon>Contact Us</v-btn>
                                 </a>
                             </v-col>
                         </v-row>
@@ -49,13 +49,13 @@
 
         <v-footer color="#0F4743" height="100px">
             <v-col align="center" cols="12" sm="12" md="4">
-                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+                <h3 class="white--text fontColor" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon class="fontColor">mdi-phone</v-icon> Middle East 0900 78601</h3>
             </v-col>
             <v-col align="center" cols="12" sm="12" md="4">
-                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+                <h3 class="white--text fontColor" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon class="fontColor">mdi-phone</v-icon> Middle East 0900 78601</h3>
             </v-col>
             <v-col align="center" cols="12" sm="12" md="4">
-                <h3 class="white--text" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon color="white">mdi-phone</v-icon> Middle East 0900 78601</h3>
+                <h3 class="white--text fontColor" href="https://vuetifyjs.com" target="_blank" style="padding-left: 20px;"><v-icon class="fontColor">mdi-phone</v-icon> Middle East 0900 78601</h3>
             </v-col>
         </v-footer>
     </div>
@@ -97,5 +97,9 @@
 
 .title-font-size * {
    font-size: 14px;
+}
+
+.fontColor {
+    color: white;
 }
 </style>
